@@ -1,0 +1,32 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:c="/lib/credentials">
+  <f:section title="Bitbucket Notifier">
+      <f:entry title="Bitbucket Root Url"
+               field="bitbucketRootUrl"
+               help="${rootURL}/plugin/bitbucketNotifier/help-globalConfig-bitbucketRootUrl.html">
+          <f:textbox />
+      </f:entry>
+      <f:entry title="${%Credentials}" field="credentialsId">
+            <c:select/>
+          </f:entry>
+      <f:entry title="Ignore unverified SSL certificates"
+               field="ignoreUnverifiedSsl"
+      		   help="${rootURL}/plugin/bitbucketNotifier/help-globalConfig-ignoreUnverifiedSSL.html">
+          <f:checkbox />
+      </f:entry>
+      <f:entry title="Keep repeated builds in Bitbucket"
+               field="includeBuildNumberInKey"
+               help="${rootURL}/plugin/bitbucketNotifier/help-globalConfig-includeBuildNumberInKey.html">
+          <f:checkbox />
+      </f:entry>
+      <f:entry title="Prepend parent project name to key"
+               field="prependParentProjectKey"
+               help="${rootURL}/plugin/bitbucketNotifier/help-globalConfig-prependParentProjectKey.html">
+          <f:checkbox />
+      </f:entry>
+      <f:entry title="Disable INPROGRESS notification"
+               field="disableInprogressNotification"
+               help="${rootURL}/plugin/bitbucketNotifier/help-globalConfig-disableInprogressNotification.html">
+          <f:checkbox default="true"/>
+      </f:entry>
+  </f:section>
+</j:jelly>
