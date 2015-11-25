@@ -651,10 +651,12 @@ public class BitbucketNotifier extends Notifier {
         if ("".equals(url) || url == null)
             url = descriptor.getBitbucketRootUrl();
 
+    // https://api.bitbucket.org/2.0/repositories/{owner}/{repo_slug}/commit/{revision}/statuses/build
 		HttpPost req = new HttpPost(
 				url
-				+ "/rest/build-status/1.0/commits/"
-				+ commitSha1);
+				+ "/commit/"
+				+ commitSha1
+        + "/statuses/build");
 
 		// If we have a credential defined then we need to determine if it
 		// is a basic auth
