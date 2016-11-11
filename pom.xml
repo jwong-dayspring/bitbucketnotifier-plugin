@@ -7,7 +7,7 @@
 	</parent>
 
 	<artifactId>bitbucketNotifier</artifactId>
-	<version>1.11</version>
+	<version>1.12</version>
 	<name>Bitbucket Notifier</name>
 	<description>
 		Jenkins plugin to notify Atlassian Bitbucket (Bitbucket) git repository servers of

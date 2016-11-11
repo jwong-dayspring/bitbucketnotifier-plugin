@@ -621,7 +621,8 @@ public class BitbucketNotifier extends Notifier {
 		HttpClient client = getHttpClient(logger,build);
 		try {
 			HttpResponse res = client.execute(req);
-			if (res.getStatusLine().getStatusCode() != 201) {
+			if (res.getStatusLine().getStatusCode() != 200 ||
+                    res.getStatusLine().getStatusCode() != 201) {
 				return NotificationResult.newFailure(
 						EntityUtils.toString(res.getEntity()));
 			} else {
