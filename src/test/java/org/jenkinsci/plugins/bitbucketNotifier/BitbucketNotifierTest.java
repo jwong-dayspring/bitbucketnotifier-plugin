@@ -94,7 +94,7 @@ public class BitbucketNotifierTest
 		when(client.getConnectionManager()).thenReturn(connectionManager);
 		when(client.execute((HttpUriRequest)anyObject())).thenReturn(resp);
 		when(resp.getStatusLine()).thenReturn(statusLine);
-		when(statusLine.getStatusCode()).thenReturn(204);
+		when(statusLine.getStatusCode()).thenReturn(201);
 		action.lastBuild = lastBuild;
 		when(lastBuild.getMarked()).thenReturn(revision);
 
